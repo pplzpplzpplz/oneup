@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
+    <canvas id="hydra-bg"></canvas>
     <main class="page">
 
       <!-- Release -->
@@ -112,9 +113,9 @@
     </main>
     <script src="https://cdn.jsdelivr.net/npm/hydra-synth/dist/hydra-synth.js"></script>
     <script>
-      // Initialize Hydra visual background
+      // Initialize Hydra visual background into our fixed canvas
       try {
-        var hydra = new Hydra({ detectAudio: false })
+        var hydra = new Hydra({ canvas: document.getElementById('hydra-bg'), detectAudio: false })
         osc(4, 0.1, 1.2).out()
       } catch (e) {
         // fail silently if CDN blocked or initialization fails

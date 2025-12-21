@@ -220,6 +220,7 @@ body {
 }
 
 /* Hydra background canvas */
+#hydra-bg,
 #hydra-canvas {
   position: fixed;
   inset: 0;
