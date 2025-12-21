@@ -1,0 +1,234 @@
+/* Base, colors, and typography */
+:root {
+  --bg: #0b0d10;
+  --text: #e6edf3;
+  --muted: #97a3af;
+  --card: #11151a;
+  --card-soft: #151b22;
+  --border: #222a33;
+  --accent: #53b1fd;
+  --accent-contrast: #0b0d10;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-2: rgba(255, 255, 255, 0.02);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f7f8fa;
+    --text: #0f172a;
+    --muted: #475569;
+    --card: #ffffff;
+    --card-soft: #f1f5f9;
+    --border: #e2e8f0;
+    --accent: #0ea5e9;
+    --accent-contrast: #ffffff;
+    --shadow: 0 6px 20px rgba(2, 6, 23, 0.08);
+    --glass: rgba(2, 6, 23, 0.04);
+    --glass-2: rgba(2, 6, 23, 0.02);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
+  font-optical-sizing: auto;
+  font-size: 16px;
+  line-height: 1.5;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image:
+    radial-gradient(1200px 400px at 10% 10%, rgba(83, 177, 253, 0.12), transparent 60%),
+    radial-gradient(1000px 500px at 90% 90%, rgba(14, 165, 233, 0.10), transparent 60%);
+}
+
+.page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  /* gap: 24px; */
+}
+
+.container {
+  width: 100%;
+  max-width: 640px;
+  margin-inline: auto;
+  padding: 20px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Release */
+.release {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  padding-top: 15vw;
+  /* gap: 12px; */
+}
+
+.cover {
+  width: min(60vw, 320px);
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  background: var(--card-soft);
+}
+
+.track {
+  font-size: 1.35rem;
+  margin: 6px 0 0;
+  letter-spacing: 0.2px;
+  font-weight: 500;
+}
+
+.artist { margin: 2px 0 0; color: var(--muted); }
+.meta { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+/* Platforms */
+.platforms { padding-bottom: 4px; padding-top: 0px; }
+.platform-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.platform-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--glass) 0%, var(--glass-2) 100%);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+  backdrop-filter: saturate(150%) blur(10px);
+}
+
+.platform-card:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+}
+
+.platform-card:active {
+  transform: translateY(0);
+}
+
+.platform-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.platform-card .left {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.platform-card .name { font-weight: 500; font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji"; }
+.platform-card .cta {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  opacity: 0.9;
+}
+
+.ico {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: transparent;
+}
+.ico img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Subscribe */
+.subscribe-card {
+  background: linear-gradient(180deg, var(--glass) 0%, var(--glass-2) 100%);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  backdrop-filter: saturate(150%) blur(10px);
+}
+.subscribe-title {
+  margin: 0 0 10px 0;
+  font-weight: 500;
+}
+.subscribe-form {
+  display: grid;
+}
+.email-input {
+  width: 100%;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card-soft);
+  color: var(--text);
+  padding: 10px 14px;
+  outline: none;
+}
+.email-input::placeholder { color: var(--muted); }
+
+/* Footer */
+.footer {
+  padding: 12px 0 28px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .platform-card {
+    transition: none;
+  }
+}
+
+/* Theming tweaks */
+@media (prefers-color-scheme: light) {
+  /* Make Tidal logo dark on light backgrounds (original SVG is white) */
+  .ico img[src$="tidal.svg"] {
+    filter: invert(1);
+  }
+}
+

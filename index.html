@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pplz — caps lock</title>
+    <meta name="description" content="caps lock by Pplz — stream on your favorite platform.">
+    <meta name="theme-color" content="#0b0d10">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="./styles.css">
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <main class="page">
+
+      <!-- Release -->
+      <header id="release" class="release container" aria-labelledby="release-title">
+        <img class="cover" src="assets/nad_art_600.jpg" alt="caps lock cover art">
+
+        <h1 id="release-title" class="track">caps lock</h1>
+        <p class="artist">pplz</p>
+        <p class="meta">Single • 2025</p>
+      </header>
+
+      <!-- Platforms -->
+      <section class="platforms container" aria-labelledby="platforms-title">
+        <h2 id="platforms-title" class="sr-only">Listen on</h2>
+        <ul class="platform-list" role="list">
+          <li>
+            <a class="platform-card" href="#" target="_blank" rel="noopener" aria-label="Play on Spotify">
+              <span class="left">
+                <span class="ico" aria-hidden="true"><img src="assets/spotify.svg" alt="" width="24" height="24" loading="lazy" decoding="async"></span>
+                <span class="name">Spotify</span>
+              </span>
+              <span class="cta">PLAY</span>
+            </a>
+          </li>
+          <li>
+            <a class="platform-card" href="#" target="_blank" rel="noopener" aria-label="Play on Apple Music">
+              <span class="left">
+                <span class="ico" aria-hidden="true"><img src="assets/apple-music.svg" alt="" width="24" height="24" loading="lazy" decoding="async"></span>
+                <span class="name">Apple Music</span>
+              </span>
+              <span class="cta">PLAY</span>
+            </a>
+          </li>
+          <li>
+            <a class="platform-card" href="#" target="_blank" rel="noopener" aria-label="Play on Tidal">
+              <span class="left">
+                <span class="ico" aria-hidden="true"><img src="assets/tidal.svg" alt="" width="24" height="24" loading="lazy" decoding="async"></span>
+                <span class="name">Tidal</span>
+              </span>
+              <span class="cta">PLAY</span>
+            </a>
+          </li>
+          <li>
+            <a class="platform-card" href="#" target="_blank" rel="noopener" aria-label="Play on YouTube Music">
+              <span class="left">
+                <span class="ico" aria-hidden="true"><img src="assets/youtube-music.svg" alt="" width="24" height="24" loading="lazy" decoding="async"></span>
+                <span class="name">YouTube Music</span>
+              </span>
+              <span class="cta">PLAY</span>
+            </a>
+          </li>
+          <li>
+            <a class="platform-card" href="#" target="_blank" rel="noopener" aria-label="Play on Soundcloud">
+              <span class="left">
+                <span class="ico" aria-hidden="true"><img src="assets/soundcloud.svg" alt="" width="24" height="24" loading="lazy" decoding="async"></span>
+                <span class="name">Soundcloud</span>
+              </span>
+              <span class="cta">PLAY</span>
+            </a>
+          </li>
+          <li>
+            <a class="platform-card" href="#" target="_blank" rel="noopener" aria-label="Play on Amazon Music">
+              <span class="left">
+                <span class="ico" aria-hidden="true"><img src="assets/amazon-music.svg" alt="" width="24" height="24" loading="lazy" decoding="async"></span>
+                <span class="name">Amazon Music</span>
+              </span>
+              <span class="cta">PLAY</span>
+            </a>
+          </li>
+          <li>
+            <a class="platform-card" href="#" target="_blank" rel="noopener" aria-label="Download from MediaFire">
+              <span class="left">
+                <span class="ico" aria-hidden="true"><img src="assets/mediafire.svg" alt="" width="24" height="24" loading="lazy" decoding="async"></span>
+                <span class="name">MediaFire</span>
+              </span>
+              <span class="cta">DOWNLOAD</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Subscribe -->
+      <section class="subscribe container" aria-labelledby="subscribe-title">
+        <h2 id="subscribe-title" class="sr-only">Subscribe for updates</h2>
+        <div class="subscribe-card">
+          <p class="subscribe-title">Get the latest from Pplz</p>
+          <form class="subscribe-form" action="#" method="post" onsubmit="return false" novalidate>
+            <input class="email-input" type="email" inputmode="email" autocomplete="email" placeholder="Enter your email" aria-label="Email">
+          </form>
+        </div>
+      </section>
+
+      <footer class="footer container">
+        <p>© <span data-year>2025</span> Pplz</p>
+      </footer>
+    </main>
+    <script>
+      const y = document.querySelector('[data-year]');
+      if (y) y.textContent = String(new Date().getFullYear());
+    </script>
+  </body>
+  </html>
+
