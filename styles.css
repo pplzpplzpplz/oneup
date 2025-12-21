@@ -60,6 +60,8 @@ body {
   display: flex;
   flex-direction: column;
   /* gap: 24px; */
+  position: relative;
+  z-index: 1; /* ensure content sits above hydra canvas */
 }
 
 .container {
@@ -215,6 +217,16 @@ body {
   text-align: center;
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+/* Hydra background canvas */
+#hydra-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none; /* keep links and inputs clickable */
 }
 
 /* Motion preferences */
