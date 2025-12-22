@@ -74,7 +74,7 @@ body {
   display: grid;
   justify-items: center;
   text-align: center;
-  padding-top: 15vw;
+  padding-top: 40px;
   /* gap: 12px; */
 }
 
@@ -224,10 +224,16 @@ body {
 
 /* Footer */
 .footer {
-  padding: 12px 0 28px;
+  padding: 12px 28px;
   text-align: center;
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+.footnote {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--muted);
 }
 
 /* Hydra background canvas */
