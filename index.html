@@ -29,9 +29,8 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=782531664842915&ev=PageView&noscript=1"
     /></noscript>
-    <!-- End Meta Pixel Code -->
 
-    <!-- Click tracking -->
+    <!-- Meta click tracking -->
     <script>
     document.addEventListener("click", function (e) {
       const link = e.target.closest("a");
@@ -50,7 +49,16 @@
       }
     });
     </script>
-    <!-- End Click tracking -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJVHSHE55F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZJVHSHE55F');
+    </script>
      
   </head>
   <body>
