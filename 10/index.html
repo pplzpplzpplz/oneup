@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>pplz — caps lock</title>
-    <meta name="description" content="caps lock by Pplz — stream on your favorite platform.">
+    <title>pplz — 10°</title>
+    <meta name="description" content="10° by Pplz">
     <meta name="theme-color" content="#0b0d10">
     <link rel="icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles.css">
@@ -97,7 +97,7 @@
             </a>
           </li>
           <li>
-            <a class="platform-card" href="https://pplz.bandcamp.com/track/caps-lock" target="_blank" rel="noopener" aria-label="Play on Bandcamp" data-track="bandcamp">
+            <a class="platform-card" href="https://pplz.bandcamp.com/track/10" target="_blank" rel="noopener" aria-label="Play on Bandcamp" data-track="bandcamp">
               <span class="left">
                 <span class="ico" aria-hidden="true"><img src="../assets/bandcamp.svg" alt="" width="24" height="24" loading="lazy" decoding="async"></span>
                 <span class="name">Bandcamp</span>
@@ -179,13 +179,13 @@
 
         osc(4, 0.1, 0.464)
           .color(0, 1.971, 2)
-          .rotate(1 / 2.918)
+          .rotate(2)
           .out(o1);
         osc(4, 0.01, 0)
           .color(2, 0.7, 1)
-          .modulate(o1, .001)
+          .modulate(o1, .4)
           .add(o1, 1)
-          .modulatePixelate(o1, .1, 40)
+          .modulatePixelate(o1, .1, 30)
           .out(o0);
       } catch (e) {
         // fail silently if CDN blocked or initialization fails

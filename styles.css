@@ -1,16 +1,10 @@
 /* Base, colors, and typography */
 :root {
-  --bg: #0b0d10;
   --text: #1f1f1f;
   --muted: #4d4d4d;
-  --card: #11151a;
   --card-soft: #151b22;
-  --border: #222a33;
   --accent: #53b1fd;
-  --accent-contrast: #0b0d10;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  --glass: rgba(255, 255, 255, 0.04);
-  --glass-2: rgba(255, 255, 255, 0.02);
 }
 
 
@@ -32,22 +26,17 @@ body {
   font-optical-sizing: auto;
   font-size: 16px;
   line-height: 1.5;
-  /* background: var(--bg); */
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-image:
-    radial-gradient(1200px 400px at 10% 10%, rgba(83, 177, 253, 0.12), transparent 60%),
-    radial-gradient(1000px 500px at 90% 90%, rgba(14, 165, 233, 0.10), transparent 60%); */
 }
 
 .page {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  /* gap: 24px; */
   position: relative;
-  z-index: 1; /* ensure content sits above hydra canvas */
+  z-index: 1;
 }
 
 .container {
@@ -75,7 +64,6 @@ body {
   justify-items: center;
   text-align: center;
   padding-top: 40px;
-  /* gap: 12px; */
 }
 
 .cover {
@@ -83,7 +71,6 @@ body {
   aspect-ratio: 1 / 1;
   border-radius: 16px;
   object-fit: cover;
-  /* border: 1px solid var(--border); */
   box-shadow: var(--shadow);
   background: var(--card-soft);
 }
@@ -118,7 +105,6 @@ body {
   font-weight: 700;
   color: var(--text);
   background: linear-gradient(180deg, rgba(222, 222, 222, 0.66) 0%, rgba(199, 199, 199, 0.5) 100%);
-  /* border: 1px solid rgba(255, 255, 255, 0.12); */
   border-radius: 14px;
   padding: 14px 16px;
   box-shadow: var(--shadow);
@@ -169,71 +155,12 @@ body {
   display: block;
 }
 
-/* Subscribe */
-.subscribe-card {
-  background: linear-gradient(180deg, rgba(222, 222, 222, 0.66) 0%, rgba(199, 199, 199, 0.5) 100%);
-  border-radius: 14px;
-  padding: 16px;
-  box-shadow: var(--shadow);
-  backdrop-filter: saturate(150%) blur(10px);
-}
-.subscribe-title {
-  margin: 0 0 10px 0;
-  font-weight: 500;
-}
-.subscribe-form {
-  display: grid;
-  gap: 10px;
-}
-.email-input {
-  width: 100%;
-  height: 44px;
-  border-radius: 10px;
-  /* border: 1px solid var(--border); */
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.66) 0%, rgba(234, 234, 234, 0.5) 100%);
-  color: var(--text);
-  padding: 10px 14px;
-  outline: none;
-}
-.email-input::placeholder { color: var(--muted); }
-.submit-btn {
-  width: 100%;
-  height: 44px;
-  border-radius: 10px;
-  border: none;
-  background: linear-gradient(180deg, rgba(222, 222, 222, 0.66) 0%, rgba(199, 199, 199, 0.5) 100%);
-  color: var(--text);
-  font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
-  font-weight: 700;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: transform 120ms ease, opacity 120ms ease;
-  backdrop-filter: saturate(150%) blur(10px);
-}
-.submit-btn:hover {
-  transform: translateY(-1px);
-  opacity: 0.9;
-}
-.submit-btn:active {
-  transform: translateY(0);
-}
-.submit-btn:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
 /* Footer */
 .footer {
   padding: 12px 28px;
   text-align: center;
   color: var(--muted);
   font-size: 0.9rem;
-}
-
-.footnote {
-  font-size: 0.8rem;
-  font-style: italic;
-  color: var(--muted);
 }
 
 /* Hydra background canvas */
@@ -249,8 +176,7 @@ body {
 
 /* Motion preferences */
 @media (prefers-reduced-motion: reduce) {
-  .platform-card,
-  .submit-btn {
+  .platform-card {
     transition: none;
   }
 }
