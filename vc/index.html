@@ -177,15 +177,15 @@
       try {
         var hydra = new Hydra({ canvas: document.getElementById('hydra-bg'), detectAudio: false })
 
-        osc(4, 0.1, 0.464)
-          .color(0, 1.971, 2)
-          .rotate(2)
+        osc(4, 0.08, 0.42)
+          .color(0.08, 1.35, 1.75)
+          .rotate(1.7)
           .out(o1);
-        osc(4, 0.01, 0)
-          .color(2, 0.7, 1)
-          .modulate(o1, .4)
+        osc(4, 0.02, 0.03)
+          .color(0.3, 0.85, 1.9)
+          .modulate(o1, .52)
           .add(o1, 1)
-          .modulatePixelate(o1, .1, 30)
+          .modulatePixelate(o1, .14, 22)
           .out(o0);
       } catch (e) {
         // fail silently if CDN blocked or initialization fails
