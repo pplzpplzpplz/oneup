@@ -173,20 +173,92 @@
     </main>
     <script src="https://cdn.jsdelivr.net/npm/hydra-synth/dist/hydra-synth.js"></script>
     <script>
-      // Initialize Hydra visual background into our fixed canvas
+      // Initialize Hydra visual background — glitchy pixel grid tuned to the cover palette
       try {
         var hydra = new Hydra({ canvas: document.getElementById('hydra-bg'), detectAudio: false })
 
-        osc(4, 0.1, 0.464)
-          .color(0, 1.971, 2)
-          .rotate(2)
-          .out(o1);
-        osc(4, 0.01, 0)
-          .color(2, 0.7, 1)
-          .modulate(o1, .4)
-          .add(o1, 1)
-          .modulatePixelate(o1, .1, 30)
-          .out(o0);
+        ;(function () {
+          function R(a, b) {
+            return a + Math.random() * (b - a)
+          }
+          var vScale = R(6, 14)
+          var vDrift = R(0.05, 0.14)
+          var magR = R(0.95, 1.35)
+          var magG = R(0.1, 0.4)
+          var magB = R(1.0, 1.55)
+          var cyaR = R(0.02, 0.12)
+          var cyaG = R(0.45, 0.85)
+          var cyaB = R(1.15, 1.95)
+          var oscFreq = R(2.5, 7)
+          var oscSync = R(0.006, 0.042)
+          var oscOff = R(0, 0.35)
+          var rotWobble = R(-0.55, 0.55)
+          var modAmt = R(0.12, 0.36)
+          var addAmt = R(0.55, 0.92)
+          var pixMul = R(0.055, 0.19)
+          var pixOff = R(14, 44)
+          var nScroll = R(0.1, 0.48)
+          var nScale = R(2.6, 4.6)
+          var nThresh = R(0.28, 0.42)
+          var nThreshW = R(0.08, 0.18)
+
+          noise(nScale, 0.1)
+            .thresh(nThresh, nThreshW)
+            .scrollY(function () {
+              return time * nScroll
+            })
+            .scrollX(function () {
+              return Math.sin(time * 0.29) * 0.14
+            })
+            .out(o2)
+
+          voronoi(vScale, function () {
+            return vDrift + time * 0.055
+          })
+            .color(magR, magG, magB)
+            .modulate(o2, function () {
+              return 0.042 + Math.sin(time * 0.31) * 0.028
+            })
+            .scrollY(function () {
+              return Math.sin(time * 0.17) * 0.04 + time * 0.018
+            })
+            .rotate(function () {
+              return time * rotWobble * 0.045
+            })
+            .out(o1)
+
+          osc(
+            function () {
+              return oscFreq + Math.sin(time * 0.16) * 1.1
+            },
+            oscSync,
+            oscOff
+          )
+            .color(cyaR, cyaG, cyaB)
+            .modulate(o1, modAmt)
+            .add(o1, addAmt)
+            .modulatePixelate(
+              o1,
+              function () {
+                return pixMul + Math.sin(time * 0.71) * 0.048
+              },
+              function () {
+                return pixOff + Math.sin(time * 1.03) * 14
+              }
+            )
+            .pixelate(
+              function () {
+                return Math.max(4, 9 + Math.sin(time * 0.85) * 11)
+              },
+              function () {
+                return Math.max(2, 6 + Math.sin(time * 1.35) * 26)
+              }
+            )
+            .scrollY(function () {
+              return -0.018 + Math.sin(time * 0.38) * 0.016
+            })
+            .out(o0)
+        })()
       } catch (e) {
         // fail silently if CDN blocked or initialization fails
       }
